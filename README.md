@@ -1,4 +1,4 @@
-# micro-ros-zephyr-template
+# Template for a MicroROS node on Zephyr RTOS
 [![PlatformIO CI](https://github.com/TechnocultureResearch/micro-ros-zephyr-template/actions/workflows/main.yml/badge.svg)](https://github.com/TechnocultureResearch/micro-ros-zephyr-template/actions/workflows/main.yml)
 
 ## Hardware
