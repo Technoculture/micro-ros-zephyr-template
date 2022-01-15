@@ -1,4 +1,6 @@
 # micro-ros-zephyr-template
+[![PlatformIO CI](https://github.com/TechnocultureResearch/micro-ros-zephyr-template/actions/workflows/main.yml/badge.svg)](https://github.com/TechnocultureResearch/micro-ros-zephyr-template/actions/workflows/main.yml)
+
 
 ---
 
