@@ -1,3 +1,11 @@
+## TODO
+- [ ] Enable RTT Tracing using Jtrace/SystemViewer
+- [ ] Add a UART-to-USB converter to USART1
+- [ ] Add threads to `main.c` file
+- [ ] Add a micro-ros node to `main.c` file
+- [ ] Add a docker compose file for interactive exploration of the micro-ros node
+
+
 # Template for a MicroROS node on Zephyr RTOS
 [![PlatformIO CI](https://github.com/TechnocultureResearch/micro-ros-zephyr-template/actions/workflows/main.yml/badge.svg)](https://github.com/TechnocultureResearch/micro-ros-zephyr-template/actions/workflows/main.yml)
 
