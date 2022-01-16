@@ -13,6 +13,17 @@
 - [Olimex E407](https://docs.zephyrproject.org/latest/boards/arm/olimex_stm32_e407/doc/index.html)
 - For a serial connection, refer the [reference](https://github.com/NicHub/STM32-E407-BLINK). Requires `libusb`, `lsusb`, and `dfu-util`.
 
+## Dependencies
+Must install `PlatformIO`, and `Docker` in order to use this template.
+
+| Component                     | Rationale |
+| ----------------------------- | ---------------------------------------------------------------- |
+| PlatformIO                    | Simplified dependency management for Embedded development        |
+| ZephyrRTOS                    | Modern real time operating system with a vast ecosystem          |
+| MicroROS (*A Zephyr Module*)  | Microcontroller Robot Operating System Middleware                |
+| Docker                        | For working with ROS interactively                               |
+| SystemViewer (*Optional*)     | Tracing using Jtag Interface                                     |
+
 
 # References
 - This repo is a minor change on the template: [start-bluepill-zephyr](https://github.com/TechnocultureResearch/start-bluepill-zephyr)
