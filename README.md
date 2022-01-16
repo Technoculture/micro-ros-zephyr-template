@@ -2,19 +2,21 @@
 - [x] Enable RTT Tracing using Jtrace/SystemViewer
 - [ ] Add a UART-to-USB converter to `USART1`
 - [ ] Add threads to `main.c` file
+- [ ] Add micro-ros module 
 - [ ] Add a micro-ros node to `main.c` file
-- [ ] Add a docker compose file for interactive exploration of the micro-ros node
+- [x] Add a docker compose file for interactive exploration of the micro-ros node
+- [ ] Add [SMF](https://docs.zephyrproject.org/latest/guides/smf/index.html) (or some other hierarchical state machine library)
 
 
 # Template for a MicroROS node on Zephyr RTOS
 [![PlatformIO CI](https://github.com/TechnocultureResearch/micro-ros-zephyr-template/actions/workflows/main.yml/badge.svg)](https://github.com/TechnocultureResearch/micro-ros-zephyr-template/actions/workflows/main.yml)
 
+# Setup
 ## Hardware
 - [Olimex E407](https://docs.zephyrproject.org/latest/boards/arm/olimex_stm32_e407/doc/index.html)
 - Jtag debugging probe for tracing
 - UART-to-USB converter (For a serial connection, refer the [reference](https://github.com/NicHub/STM32-E407-BLINK). Requires `libusb`, `lsusb`, and `dfu-util`)
 - Ethernet connection for ROS communication
-
 
 ## Dependencies
 Must install `PlatformIO`, and `Docker` in order to use this template.
@@ -23,13 +25,18 @@ Must install `PlatformIO`, and `Docker` in order to use this template.
 |------------------------------|-----------------------------------------------------------|
 | PlatformIO                   | Simplified dependency management for Embedded development |
 | ZephyrRTOS                   | Modern real time operating system with a vast ecosystem   |
-| MicroROS (*A Zephyr Module*) | Microcontroller Robot Operating System Middleware         |
-| Docker (and docker-compose)  | For working with ROS interactively                        |
-| SystemViewer (*Optional*)    | Tracing using Jtag Interface                              |
-| Renode (*Optional*)          | Hardware-Software-Network Co-simulation and Testing       |
+| MicroROS (*A Zephyr module*) | Microcontroller Robot Operating System Middleware         |
+
+### Optional dependencies
+| Component                    | Rationale                                            |
+|------------------------------|------------------------------------------------------|
+| Docker (and docker-compose)  | For working with ROS interactively                   |
+| SystemView                   | Tracing using Jtag Interface                         |
+| Renode                       | Hardware-Software-Network emulation and testing      |
 
 
-## Build
+# Build
+## PlatformIO
 
 ``` sh
 # Build project
@@ -41,7 +48,6 @@ $ pio run --target upload
 # Clean build files
 $ pio run --target clean
 ```
-
 
 ## ROS
 This section is modified from [here](https://github.com/TechnocultureResearch/micro_ros_stm32_template).
@@ -99,8 +105,21 @@ $ renode
 - [Basic Execution Control](https://renode.readthedocs.io/en/latest/basic/control.html)
 
 
-# Installation
+# References
+## PlatformIO
+- This repo is a minor change on the template: [start-bluepill-zephyr](https://github.com/TechnocultureResearch/start-bluepill-zephyr)
+- [Enabling PlatformIO and Zephyr on custom hardware](https://www.zephyrproject.org/enabling-platformio-and-zephyr-on-custom-hardware/)
+- [Custom Embedded Boards](https://docs.platformio.org/en/latest/platforms/creating_board.html)
 
+## MicroROS
+- [First micro-ROS Application on Zephyr RTOS](https://www.zephyrproject.org/first-micro-ros-application-on-zephyr-rtos/)
+- [MicroROS external zephyr module](https://github.com/micro-ROS/micro_ros_zephyr_module)
+- [News about the micro-ros module](https://zephyrproject.org/micro-ros-a-member-of-the-zephyr-project-and-integrated-into-the-zephyr-build-system-as-a-module/)
+
+## SMF 
+- [State Machine Framework](https://github.com/zephyrproject-rtos/zephyr/tree/main/tests/lib/smf/src)
+
+## Installation
 | Component      | Installation Hint                                                                   |
 |----------------|-------------------------------------------------------------------------------------|
 | docker         | Follow instruction on their website                                                 |
@@ -108,11 +127,4 @@ $ renode
 | platformio     | VS Code Extension Hub                                                               |
 | zephyr-rtos    | Don't have to install (platformio takes care of this)                               |
 | renode         | Download the installer from the release section of their github folder              |
-| Systemviewer   | Installer from their website                                                        |
-
-
-# References
-- This repo is a minor change on the template: [start-bluepill-zephyr](https://github.com/TechnocultureResearch/start-bluepill-zephyr)
-- [Enabling PlatformIO and Zephyr on custom hardware](https://www.zephyrproject.org/enabling-platformio-and-zephyr-on-custom-hardware/)
-- [Custom Embedded Boards](https://docs.platformio.org/en/latest/platforms/creating_board.html)
-- [First micro-ROS Application on Zephyr RTOS](https://www.zephyrproject.org/first-micro-ros-application-on-zephyr-rtos/)
+| Systemview     | Installer from their website                                                        |
