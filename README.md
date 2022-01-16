@@ -25,6 +25,7 @@ Must install `PlatformIO`, and `Docker` in order to use this template.
 | MicroROS (*A Zephyr Module*)  | Microcontroller Robot Operating System Middleware                |
 | Docker                        | For working with ROS interactively                               |
 | SystemViewer (*Optional*)     | Tracing using Jtag Interface                                     |
+| Renode (*Optional*)           | Hardware-Software-Network Co-simulation and Testing              |
 
 
 # References
