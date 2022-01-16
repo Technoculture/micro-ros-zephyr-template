@@ -1,0 +1,11 @@
+version: '2.3'
+
+services:
+  zephyr_node:
+    image: microros/micro-ros-agent:galactic
+    ports:
+      - "8888:8888/udp"
+    command: udp4 --port 8888 # -v6
+  linux_node:
+    image: osrf/ros:galactic-desktop
+    command: ros2 run demo_nodes_cpp linux_node # demo_nodes_cpp is a demo application that ships as a part of ROS
