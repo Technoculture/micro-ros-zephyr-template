@@ -85,7 +85,7 @@ data: 'Hello World: 9, sys_clk: 9000'
 ---
 ```
 
-### Renode Emulation
+## Renode Emulation
 ```sh
 $ renode
 
