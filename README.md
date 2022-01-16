@@ -11,7 +11,9 @@
 
 ## Hardware
 - [Olimex E407](https://docs.zephyrproject.org/latest/boards/arm/olimex_stm32_e407/doc/index.html)
-- For a serial connection, refer the [reference](https://github.com/NicHub/STM32-E407-BLINK). Requires `libusb`, `lsusb`, and `dfu-util`.
+- Jtag debugging probe for tracing
+- UART-to-USB converter (For a serial connection, refer the [reference](https://github.com/NicHub/STM32-E407-BLINK). Requires `libusb`, `lsusb`, and `dfu-util`)
+- Ethernet connection for ROS communication
 
 ## Dependencies
 Must install `PlatformIO`, and `Docker` in order to use this template.
