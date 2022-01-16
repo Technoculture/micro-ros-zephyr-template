@@ -15,18 +15,6 @@
 - UART-to-USB converter (For a serial connection, refer the [reference](https://github.com/NicHub/STM32-E407-BLINK). Requires `libusb`, `lsusb`, and `dfu-util`)
 - Ethernet connection for ROS communication
 
-## Build
-
-``` sh
-# Build project
-$ pio run
-
-# Upload firmware
-$ pio run --target upload
-
-# Clean build files
-$ pio run --target clean
-```
 
 ## Dependencies
 Must install `PlatformIO`, and `Docker` in order to use this template.
@@ -41,8 +29,22 @@ Must install `PlatformIO`, and `Docker` in order to use this template.
 | Renode (*Optional*)          | Hardware-Software-Network Co-simulation and Testing       |
 
 
+## Build
+
+``` sh
+# Build project
+$ pio run
+
+# Upload firmware
+$ pio run --target upload
+
+# Clean build files
+$ pio run --target clean
+```
+
+
 ## ROS
-This section modified from [here](https://github.com/TechnocultureResearch/micro_ros_stm32_template).
+This section is modified from [here](https://github.com/TechnocultureResearch/micro_ros_stm32_template).
 
 ``` sh
 $ cd zephyr
@@ -83,11 +85,6 @@ data: 'Hello World: 9, sys_clk: 9000'
 ---
 ```
 
-# References
-- This repo is a minor change on the template: [start-bluepill-zephyr](https://github.com/TechnocultureResearch/start-bluepill-zephyr)
-- [Enabling PlatformIO and Zephyr on custom hardware](https://www.zephyrproject.org/enabling-platformio-and-zephyr-on-custom-hardware/)
-- [Custom Embedded Boards](https://docs.platformio.org/en/latest/platforms/creating_board.html)
-- [First micro-ROS Application on Zephyr RTOS](https://www.zephyrproject.org/first-micro-ros-application-on-zephyr-rtos/)
 
 # Installation
 
@@ -99,3 +96,10 @@ data: 'Hello World: 9, sys_clk: 9000'
 | zephyr-rtos    | Don't have to install (platformio takes care of this)                               |
 | renode         | Download the installer from the release section of their github folder              |
 | Systemviewer   | Installer from their website                                                        |
+
+
+# References
+- This repo is a minor change on the template: [start-bluepill-zephyr](https://github.com/TechnocultureResearch/start-bluepill-zephyr)
+- [Enabling PlatformIO and Zephyr on custom hardware](https://www.zephyrproject.org/enabling-platformio-and-zephyr-on-custom-hardware/)
+- [Custom Embedded Boards](https://docs.platformio.org/en/latest/platforms/creating_board.html)
+- [First micro-ROS Application on Zephyr RTOS](https://www.zephyrproject.org/first-micro-ros-application-on-zephyr-rtos/)
