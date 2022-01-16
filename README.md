@@ -85,6 +85,19 @@ data: 'Hello World: 9, sys_clk: 9000'
 ---
 ```
 
+### Renode Emulation
+```sh
+$ renode
+
+(monitor) mach create
+(machine-0) machine LoadPlatformDescription @platforms/boards/stm32f4_discovery.repl
+(machine-0) sysbus LoadELF @.pio/build/f4_disco/firmware.elf
+(machine-0) start
+```
+
+- [Working with machines](https://renode.readthedocs.io/en/latest/basic/machines.html)
+- [Basic Execution Control](https://renode.readthedocs.io/en/latest/basic/control.html)
+
 
 # Installation
 
