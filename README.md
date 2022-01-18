@@ -2,10 +2,9 @@
 - [x] Enable RTT Tracing using Jtrace/SystemViewer
 - [ ] Add a UART-to-USB converter to `USART1`
 - [ ] Add threads to `main.c` file
-- [ ] Add micro-ros module 
-- [ ] Add a micro-ros node to `main.c` file
-- [x] Add a docker compose file for interactive exploration of the micro-ros node
 - [ ] Add [SMF](https://docs.zephyrproject.org/latest/guides/smf/index.html) (or some other hierarchical state machine library)
+- [ ] Add CANopen module
+- [x] Add a docker compose file for interactive exploration of the micro-ros node
 
 
 # Template for a MicroROS node on Zephyr RTOS
@@ -16,7 +15,6 @@
 - [Olimex E407](https://docs.zephyrproject.org/latest/boards/arm/olimex_stm32_e407/doc/index.html)
 - Jtag debugging probe for tracing
 - UART-to-USB converter (For a serial connection, refer the [reference](https://github.com/NicHub/STM32-E407-BLINK). Requires `libusb`, `lsusb`, and `dfu-util`)
-- Ethernet connection for ROS communication
 
 ## Dependencies
 Must install `PlatformIO`, and `Docker` in order to use this template.
@@ -25,7 +23,6 @@ Must install `PlatformIO`, and `Docker` in order to use this template.
 |------------------------------|-----------------------------------------------------------|
 | PlatformIO                   | Simplified dependency management for Embedded development |
 | ZephyrRTOS                   | Modern real time operating system with a vast ecosystem   |
-| MicroROS (*A Zephyr module*) | Microcontroller Robot Operating System Middleware         |
 
 ### Optional dependencies
 | Component                    | Rationale                                            |
@@ -49,48 +46,6 @@ $ pio run --target upload
 $ pio run --target clean
 ```
 
-## ROS
-This section is modified from [here](https://github.com/TechnocultureResearch/micro_ros_stm32_template).
-
-``` sh
-$ cd zephyr
-$ docker-compose up
-# This will fail if docker is not been installed properly, with it running in the background
-
-$ docker ps
-
-$ docker exec -t bash
-# Runs docker in interactive mode
-
-root@f2c457f245bf:/# source /opt/ros/$ROS_DISTRO/setup.bash
-root@f2c457f245bf:/# ros2 node list
-/zephyr_node
-/linux_node
-root@f2c457f245bf:/# ros2 node info /zephyr_node
-/zephyr_node
-  Subscribers:
-
-  Publishers:
-    /chatter: std_msgs/msg/String
-  Service Servers:
-
-  Service Clients:
-
-  Action Servers:
-
-  Action Clients:
-
-root@f2c457f245bf:/# ros2 topic echo /chatter 
-data: 'Hello World: 6, sys_clk: 9000'
----
-data: 'Hello World: 7, sys_clk: 9000 '
----
-data: 'Hello World: 8, sys_clk: 9000'
----
-data: 'Hello World: 9, sys_clk: 9000'
----
-```
-
 ## Renode Emulation
 ```sh
 $ renode
@@ -111,13 +66,13 @@ $ renode
 - [Enabling PlatformIO and Zephyr on custom hardware](https://www.zephyrproject.org/enabling-platformio-and-zephyr-on-custom-hardware/)
 - [Custom Embedded Boards](https://docs.platformio.org/en/latest/platforms/creating_board.html)
 
-## MicroROS
-- [First micro-ROS Application on Zephyr RTOS](https://www.zephyrproject.org/first-micro-ros-application-on-zephyr-rtos/)
-- [MicroROS external zephyr module](https://github.com/micro-ROS/micro_ros_zephyr_module)
-- [News about the micro-ros module](https://zephyrproject.org/micro-ros-a-member-of-the-zephyr-project-and-integrated-into-the-zephyr-build-system-as-a-module/)
-
 ## SMF 
 - [State Machine Framework](https://github.com/zephyrproject-rtos/zephyr/tree/main/tests/lib/smf/src)
+
+## CANopen
+- [Zephyr CANopen documentation](https://docs.zephyrproject.org/latest/samples/modules/canopennode/README.html)
+- [CANopen Editor](https://github.com/CANopenNode/CANopenEditor)
+- [zephyr CANopen node](https://github.com/zephyrproject-rtos/zephyr/tree/main/samples/modules/canopennode)
 
 ## Installation
 | Component      | Installation Hint                                                                   |
