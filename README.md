@@ -67,6 +67,13 @@ $ pio device monitor -p /dev/ttyUSB0
 $ minicom -D /dev/ttyUSB0 -b 115200 -c on
 ```
 
+It is sometimes usefull to use a `compile_commands.json` to get better intellisense. This can be done easily by runnning the following command.
+```sh
+$ pio run -t compiledb
+# For building this for just one of the targets, use
+$ pio run -t compiledb -e olimex_e407
+```
+
 ## Renode Emulation
 Renode can be useful when developing systems with more complexity i.e, involving multiple nodes in a network configuration, or involving custom hardware (build on FPGAs), or custom boards requiring emulation for testability. Lots to explore here.
 
