@@ -1,7 +1,7 @@
 ## TODO
 - [x] Enable RTT Tracing using Jtrace/SystemViewer
 - [x] Add a UART-to-USB converter to `USART1`
-- [ ] Add threads to `main.c` file
+- [x] Add threads to `main.c` file
 - [ ] Add [SMF](https://docs.zephyrproject.org/latest/guides/smf/index.html) (or some other hierarchical state machine library)
 - [ ] Add a standalone library and link it to the zephyr application in manner standard to platfromio
 - [ ] Add a unit test for library functions
