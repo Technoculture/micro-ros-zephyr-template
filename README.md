@@ -41,9 +41,21 @@ $ pio run
 
 # Upload firmware
 $ pio run --target upload
+# or,
+$ pio run -t upload -e olimex_e407
 
 # Clean build files
 $ pio run --target clean
+
+# Debug (run through VS Code)
+$ pio debug
+
+# Monitor (UART)
+$ pio device monitor
+# or,
+$ pio device monitor -p /dev/ttyUSB0
+# or, (requires, `minicom` to be installed)
+$ minicom -D /dev/ttyUSB0 -b 115200 -c on
 ```
 
 ## Renode Emulation
