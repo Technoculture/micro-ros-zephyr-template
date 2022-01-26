@@ -3,6 +3,9 @@
 - [x] Add a UART-to-USB converter to `USART1`
 - [ ] Add threads to `main.c` file
 - [ ] Add [SMF](https://docs.zephyrproject.org/latest/guides/smf/index.html) (or some other hierarchical state machine library)
+- [ ] Add a standalone library and link it to the zephyr application in manner standard to platfromio
+- [ ] Add a unit test for library functions
+- [ ] Add a unit test for application - what is the best approach here?
 - [ ] Add CANopen module
 
 # Template for a MicroROS node on Zephyr RTOS
@@ -26,13 +29,12 @@ Must install `PlatformIO`, and `Docker` in order to use this template.
 | Component                    | Rationale                                            |
 |------------------------------|------------------------------------------------------|
 | Docker (and docker-compose)  | For working with ROS interactively                   |
-| Tracealyzer | Tracing using Jtag Interface                         |
+| Tracealyzer                  | Tracing using Jtag Interface                         |
 | Renode                       | Hardware-Software-Network emulation and testing      |
 
 
-# Build
-## PlatformIO
-
+# Build Instructions
+Use the following commands or use the platformIO UI in vscode to build and upload frmware.
 ``` sh
 # Build project
 $ pio run
@@ -41,13 +43,22 @@ $ pio run
 $ pio run --target upload
 # or,
 $ pio run -t upload -e olimex_e407
+```
 
+If needed, one can delete the contents of the build directory to compile everything from scratch. Use the following command or the platformIO UI to `clean` or `clean all`.
+```sh
 # Clean build files
 $ pio run --target clean
+```
 
+It is recommended to **not use the command line** in this case. Prefer the debug UI in VS Code.
+```sh
 # Debug (run through VS Code)
 $ pio debug
+```
 
+Use the UI to `monitor` using platformIO. It might be easier sometimes to use `minicom`, `putty`, or other such standalone tools for UART interaction.
+```sh
 # Monitor (UART)
 $ pio device monitor
 # or,
@@ -57,6 +68,8 @@ $ minicom -D /dev/ttyUSB0 -b 115200 -c on
 ```
 
 ## Renode Emulation
+Renode can be useful when developing systems with more complexity i.e, involving multiple nodes in a network configuration, or involving custom hardware (build on FPGAs), or custom boards requiring emulation for testability. Lots to explore here.
+
 ```sh
 $ renode
 
@@ -92,4 +105,4 @@ $ renode
 | platformio     | VS Code Extension Hub                                                               |
 | zephyr-rtos    | Don't have to install (platformio takes care of this)                               |
 | renode         | Download the installer from the release section of their github folder              |
-| Tracealyzer | Installer from their website                                                        |
+| Tracealyzer    | Installer from their website                                                        |
