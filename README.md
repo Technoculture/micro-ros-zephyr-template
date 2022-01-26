@@ -1,11 +1,9 @@
 ## TODO
 - [x] Enable RTT Tracing using Jtrace/SystemViewer
-- [ ] Add a UART-to-USB converter to `USART1`
+- [x] Add a UART-to-USB converter to `USART1`
 - [ ] Add threads to `main.c` file
 - [ ] Add [SMF](https://docs.zephyrproject.org/latest/guides/smf/index.html) (or some other hierarchical state machine library)
 - [ ] Add CANopen module
-- [x] Add a docker compose file for interactive exploration of the micro-ros node
-
 
 # Template for a MicroROS node on Zephyr RTOS
 [![PlatformIO CI](https://github.com/TechnocultureResearch/micro-ros-zephyr-template/actions/workflows/main.yml/badge.svg)](https://github.com/TechnocultureResearch/micro-ros-zephyr-template/actions/workflows/main.yml)
@@ -28,7 +26,7 @@ Must install `PlatformIO`, and `Docker` in order to use this template.
 | Component                    | Rationale                                            |
 |------------------------------|------------------------------------------------------|
 | Docker (and docker-compose)  | For working with ROS interactively                   |
-| SystemView                   | Tracing using Jtag Interface                         |
+| Tracealyzer | Tracing using Jtag Interface                         |
 | Renode                       | Hardware-Software-Network emulation and testing      |
 
 
@@ -94,4 +92,4 @@ $ renode
 | platformio     | VS Code Extension Hub                                                               |
 | zephyr-rtos    | Don't have to install (platformio takes care of this)                               |
 | renode         | Download the installer from the release section of their github folder              |
-| Systemview     | Installer from their website                                                        |
+| Tracealyzer | Installer from their website                                                        |
